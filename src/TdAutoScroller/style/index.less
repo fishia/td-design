@@ -1,0 +1,23 @@
+.td-autoscroller {
+  overflow: hidden;
+  width: 100%;
+  height: 80px;
+
+  &-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    & > * {
+      flex: 0 0 auto;
+    }
+  }
+
+  &-container--X {
+    flex-direction: row;
+  }
+
+  &-container--Y {
+    flex-direction: column;
+  }
+}

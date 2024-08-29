@@ -1,0 +1,56 @@
+.td-image-group {
+  &__wrapper {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  max-width: 100%;
+
+  .ant-image {
+    flex-shrink: 0;
+  }
+
+  &__animate {
+    -webkit-animation: imgScroll 30s linear infinite;
+    -moz-animation: imgScroll 30s linear infinite;
+  }
+
+  &__pauseOnHover:hover,
+  &__paused {
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+  }
+
+
+}
+
+.ant-image-preview-switch-left {
+  left: 46%;
+}
+
+.ant-image-preview-switch-right {
+  right: 46%;
+}
+
+.ant-image-preview-switch-left,
+.ant-image-preview-switch-right {
+  top: 81%;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: -4px -6px 7px 0px rgba(166, 191, 255, 0.06), 3px 4px 7px 2px rgba(156, 179, 238, 0.07), -4px 9px 7px 0px rgba(152, 170, 206, 0.08);
+}
+
+@keyframes imgScroll {
+  from {
+    left: 0
+  }
+
+  to {
+    left: -100%;
+  }
+}

@@ -1,0 +1,28 @@
+@import '../../style/theme/index.less';
+
+.td-tag-select {
+  &__title {
+    line-height: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #141933;
+    margin-bottom: 8px;
+  }
+
+  &__desc {
+    font-size: 12px;
+    color: #474c66;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+
+    .td-tag-button {
+      flex-shrink: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

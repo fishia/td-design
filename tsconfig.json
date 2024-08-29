@@ -1,0 +1,46 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "declaration": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "jsx": "react",
+    "baseUrl": "./",
+    "paths": {
+      "@@/*": [
+        ".dumi/tmp/*"
+      ],
+      "td-design": [
+        "src"
+      ],
+      "td-design/*": [
+        "src/*",
+        "*"
+      ],
+      "@/*": [
+        "src/*"
+      ]
+    },
+    "typeRoots": [
+      "node_modules/@types",
+      "src/global.d.ts"
+    ],
+    "types": [
+      "node"
+    ]
+  },
+  "include": [
+    ".umirc.ts",
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "lib",
+    "es",
+    "dist",
+    "typings",
+    "**/__test__",
+    "test",
+    ".eslintrc.js"
+  ]
+}

@@ -1,0 +1,195 @@
+.td-share-modal {
+  .rel {
+    position: relative;
+  }
+
+  .strong {
+    font-weight: bold;
+  }
+
+  .f18 {
+    font-size: 18px;
+  }
+
+  .f12 {
+    font-size: 12px;
+  }
+
+  .ant-modal-content {
+    background: #ffffff;
+    border-radius: 4px;
+  }
+
+  .ant-modal-header {
+    background: #f6f7fa;
+    border-bottom-width: 0;
+  }
+
+  .ant-modal-footer {
+    padding: 0;
+  }
+
+  &-canvas {
+    width: 320px;
+    position: relative;
+    margin: 0 auto;
+
+    & &__scrolls {
+      width: 310px;
+      height: 540px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      position: relative;
+      scrollbar-width: none;
+      /* firefox */
+      -ms-overflow-style: none;
+
+      /* IE 10+ */
+      &::-webkit-scrollbar {
+        display: none;
+        /* Chrome Safari */
+      }
+    }
+
+    & &__wrapper {
+      width: 310px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      background-size: cover;
+    }
+
+    & &__content {
+      position: relative;
+      height: 100%;
+
+      .logo {
+        width: 83px;
+        height: 19px;
+        position: absolute;
+        top: 29px;
+        right: 13px;
+      }
+
+      .date {
+        width: 30px;
+        position: absolute;
+        top: 30px;
+        left: 14px;
+        color: #fff;
+        line-height: 16px;
+      }
+
+      .watermark {
+        width: 256px;
+        font-size: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        text-align: center;
+        font-family: HYYakuHei-HEW, HYYakuHei;
+        font-weight: 600;
+        white-space: pre-wrap;
+      }
+    }
+  }
+
+  &-tipWrapper {
+    width: 185px;
+    height: 80px;
+    background: #40405b;
+    position: absolute;
+    cursor: default;
+
+    &::before {
+      width: 6px;
+      position: absolute;
+      left: -16px;
+      top: 0;
+      bottom: 0;
+      height: 8px;
+      margin: auto 0;
+      content: '';
+      border: 6px solid #40405b;
+      border-top-color: transparent;
+      border-right-color: #40405b;
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+      border-right-width: 10px;
+      border-top-width: 6px;
+    }
+
+    &__content {
+      width: 144px;
+      height: 40px;
+      margin: 23px 0 0 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__text {
+      font-size: 14px;
+      font-weight: 400;
+      color: #ffffff;
+      line-height: 20px
+    }
+
+    &__closeIcon {
+      width: 10px;
+      height: 10px;
+      font-size: 16px;
+      text-align: center;
+      cursor: pointer;
+      position: absolute;
+      top: 0px;
+      right: 8px;
+      padding: 0.25em 0;
+      color: #fff;
+      font-size: 14px;
+    }
+  }
+
+
+  &__footer {
+    height: 116px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e5e5e5;
+
+    &__bgWrapper {
+      border-radius: 4px;
+      margin-right: 3px;
+      position: relative;
+    }
+
+    &__bgImg {
+      width: 50px;
+      height: 66px;
+      border-radius: 4px;
+      opacity: 0.6;
+      cursor: pointer;
+
+      &--selected {
+        width: 50px;
+        height: 66px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 4px;
+        border: 2px solid #4773ff;
+
+        .checkImg {
+          width: 29px;
+          height: 5px;
+          display: block;
+          margin: 19px auto;
+        }
+      }
+    }
+  }
+}

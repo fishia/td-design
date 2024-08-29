@@ -1,0 +1,121 @@
+.td-Avatar {
+  display: inline-block;
+  position: relative;
+
+  .pixelated {
+    img {
+      filter: blur(4px);
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__pendantImg {
+    position: absolute;
+    z-index: 4;
+    width: 130%;
+    top: -23%;
+    left: -16%;
+  }
+
+  &__noticeMask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    border-radius: 50%;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    background: rgba(0, 0, 0, 0.65);
+    color: #fff;
+    transition: all 0.2s ease-out;
+    opacity: 0;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__genderIcon {
+    position: absolute;
+    top: 11%;
+    right: 11%;
+    transform: translate(50%, -50%);
+    transform-origin: 100% 0%;
+    z-index: 3;
+    width: 28%;
+    height: 28%;
+  }
+
+}
+
+.modal-show-empty {
+
+  .ant-modal-body {
+    padding: 0;
+  }
+
+  .ant-modal-content {
+    border-radius: 5px;
+    padding: 0;
+  }
+
+  .ant-modal-confirm-content {
+    margin: 0;
+  }
+
+  .ant-modal-confirm-btns {
+    margin: 0;
+  }
+
+  &-content {
+    position: relative;
+
+    &-close {
+      position: absolute;
+      font-size: 30px;
+      right: -40px;
+      top: 0;
+      color: #fffc;
+      cursor: pointer;
+
+      &.light {
+        color: #fff;
+      }
+
+      &-inside {
+        position: absolute;
+        font-size: 18px;
+        right: 20px;
+        top: 20px;
+        color: #7a7f99;
+        cursor: pointer;
+
+        &.light {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .td-Avatar__preview {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      max-width: 400px;
+      max-height: 400px;
+    }
+  }
+}

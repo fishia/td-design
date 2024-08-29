@@ -1,0 +1,58 @@
+@import '../../style/theme/index.less';
+
+.customInputStyle {
+  color: #141933;
+  border-radius: @border-radius-base;
+  background: #FFFFFF;
+  border-radius: 2px 2px 2px 2px;
+  border: 1px solid #E2E4EE;
+
+  &::placeholder {
+    font-size: 14px;
+    font-family: PingFang SC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #C7CBDE;
+    line-height: 22px;
+  }
+}
+
+input[class*="td-input"] {
+  .customInputStyle;
+  height: 36px;
+
+  .ant-input {
+    .customInputStyle;
+    height: auto;
+  }
+}
+
+.td-input__countDownInput {
+  display: flex;
+  position: relative;
+  align-items: center;
+
+  .ant-input {
+    height: 40px;
+    background: #f7f8fa;
+    border-radius: 5px;
+    opacity: 1;
+    border: 1px solid #b6bbd7;
+  }
+
+  button {
+    right: 10px;
+    position: absolute;
+    z-index: 1;
+  }
+}
+
+div[class*="td-input-textarea"] {
+  .ant-input {
+    .customInputStyle;
+    padding: 5px 12px;
+  }
+
+  &::after {
+    color: rgb(154, 163, 183);
+  }
+}

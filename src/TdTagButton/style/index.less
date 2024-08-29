@@ -1,0 +1,165 @@
+@import '../../style/theme/index.less';
+
+.td-tag-button {
+  border-radius: 4px;
+
+  .ant-btn {
+    box-shadow: none;
+    border-radius: 4px;
+    min-height: 40px;
+    height: auto;
+    padding: 0 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    span {
+      white-space: pre-wrap;
+    }
+
+    &-sm {
+      font-size: 12px;
+      min-height: 22px;
+      padding: 1px 4px;
+      transform: scale(0.83);
+    }
+
+    &:hover,
+    &:active,
+    &-background-ghost {
+      background-color: transparent;
+    }
+  }
+
+  .ant-btn.noHover.ant-btn-link {
+
+    &:hover,
+    &:active {
+      border-color: transparent !important;
+      background-color: transparent !important;
+    }
+  }
+
+  .ant-btn.noHover.ant-btn-background-ghost,
+  .ant-btn.noHover.ant-btn-dashed {
+
+    &:hover,
+    &:active {
+      background-color: transparent !important;
+    }
+  }
+
+  &__close-icon,
+  &__icon {
+    margin-left: auto;
+    padding-left: 16px;
+    font-size: 13px;
+  }
+
+  &--disabled {
+    .ant-btn {
+      cursor: not-allowed;
+      border-color: #d9d9d9;
+      color: rgba(0, 0, 0, 25%) !important;
+      background-color: rgba(0, 0, 0, 4%) !important;
+      box-shadow: none;
+
+      &:hover,
+      &:active {
+        border-color: transparent !important;
+      }
+    }
+  }
+
+  .noBordered {
+    border: none;
+  }
+
+  &__closed {
+    display: none;
+  }
+
+  &__ellipsis {
+    .ant-btn>span {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  .noHover {
+    cursor: text !important;
+  }
+}
+
+.buttonTheme(@TdgButtonBorderColor: #e2e4ee,
+  @TdgButtonBackgroundColor: #F1F2F2,
+  @TagButtonColor: #262626) {
+
+  .ant-btn,
+  .ant-btn.ant-btn-background-ghost {
+    border-color: @TdgButtonBorderColor;
+    color: @TagButtonColor;
+    background-color: @TdgButtonBackgroundColor;
+  }
+
+  .noHover {
+
+    &:hover,
+    &:active {
+      border-color: @TdgButtonBorderColor !important;
+      color: @TagButtonColor !important;
+      background-color: @TdgButtonBackgroundColor !important;
+    }
+  }
+
+  .ant-btn-link {
+    border-color: transparent;
+    background-color: transparent;
+  }
+
+  .ant-btn.ant-btn-background-ghost,
+  .ant-btn.ant-btn-dashed {
+    background-color: transparent;
+  }
+}
+
+.warm {
+  .buttonTheme(#ef953c,
+    rgba(248, 199, 149, 0.4), #ef953c)
+}
+
+.cold {
+  .buttonTheme(#c0c8f0,
+    #eaf1fc, #2d75e6)
+}
+
+.hope {
+  .buttonTheme(rgba(160, 183, 127, 0.53),
+    rgba(160, 183, 127, 0.2), #80a946)
+}
+
+.hurry {
+  .buttonTheme(rgb(207, 48, 58),
+    rgba(207, 48, 58, 0.2), #cf303a)
+}
+
+.official {
+  .buttonTheme(#e2e4ee,
+    #f3f5ff, #7a7f99)
+}
+
+.default {
+  .buttonTheme()
+}
+
+.td-tag-button__selected {
+
+  .ant-btn,
+  .ant-btn.ant-btn-background-ghost {
+    background: #FFFFFF;
+    color: @primary-color;
+    border-color: @primary-color;
+  }
+}

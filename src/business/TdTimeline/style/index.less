@@ -1,0 +1,55 @@
+@import '../../../style/theme/index.less';
+
+.td-time-line-wrap {
+  .td-time-line-item {
+    // width: 1px;
+    // height: calc(100% - 24px);
+    // border-left: 1px dashed @border-color-base;
+    position: relative;
+
+
+    .td-time-line-item-tail {
+      position: absolute;
+      top: 12px;
+      left: 0;
+      // inset-block-start: 10px;
+      // inset-inline-start: 4px;
+      width: 1px;
+      height: 100%;
+      // height: calc(100% - 5px);
+      transform: translateX(-50%);
+      border-left: 1px dashed @border-color-base;
+    }
+
+    &:last-child {
+      .td-time-line-item-tail {
+        display: none;
+      }
+    }
+
+    .td-time-line-icon {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translate(-50%, -50%);
+      width: 12px;
+      height: 12px;
+      background-color: #fff;
+    }
+
+    .td-time-line-time {
+      margin-left: 10px;
+      display: inline-block;
+      min-width: 130px;
+      color: @text-color-secondary;
+    }
+
+    .td-time-line-txt1 {
+      color: @text-color;
+    }
+
+    .td-time-line-txt2 {
+      color: @text-color;
+    }
+  }
+}

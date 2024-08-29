@@ -1,0 +1,309 @@
+@import '../../style/theme/index.less';
+
+.td-table {
+  position: relative;
+  overflow: hidden;
+
+  .ant-table {
+    .ant-table-thead>tr>th:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan]):before {
+      width: 0;
+    }
+
+    .ant-table-container table>thead>tr:first-child>*:first-child {
+      border-start-start-radius: 4px;
+    }
+
+    .ant-table-container table>thead>tr:first-child>*:last-child {
+      border-top-right-radius: 4px;
+    }
+
+    .ant-table-container {
+      border-radius: 4px;
+      border: 1px solid #E8E9F3;
+    }
+
+    .ant-table-thead>tr>th {
+      color: #141933;
+      font-weight: bolder;
+      padding: 16px 11px;
+      background-color: #F7F8FA;
+      border-bottom: 1px solid #E8E9F3;
+
+      &:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before {
+        background-color: transparent;
+      }
+    }
+
+    /* 美化滚动条的样式 */
+    .ant-table-body {
+      scrollbar-width: auto;
+      scrollbar-color: auto;
+      overflow: auto !important;
+      /* 修复滚动条在Webkit内核下的隐藏问题 */
+    }
+
+    /* 自定义滚动条轨道样式 */
+    .ant-table-body::-webkit-scrollbar-track {
+      background-color: #f0f0f0;
+      border-radius: 8px;
+      /* 轨道颜色 */
+    }
+
+    /* 自定义滚动条的样式 */
+    .ant-table-body::-webkit-scrollbar {
+      width: 6px;
+      /* 滚动条宽度 */
+      height: 6px;
+      /* 滚动条高度 */
+    }
+
+    .ant-table-body::-webkit-scrollbar-thumb {
+      background-color: #E8E9F3;
+      /* 滚动条滑块颜色 */
+    }
+
+    .ant-table-body::-webkit-scrollbar-thumb:hover {
+      background-color: #c1c1c1;
+      /* 滚动条滑块hover颜色 */
+    }
+
+    .ant-table-tbody {
+      scrollbar-width: auto;
+      scrollbar-color: auto;
+
+      tr {
+        td {
+          font-weight: 400;
+          color: #474C66;
+          font-size: 14px;
+          border-bottom: 1px solid #E6E8F2;
+        }
+
+        &:last-child {
+          td {
+            border-bottom-color: transparent;
+          }
+        }
+      }
+
+      .ant-btn {
+        border-radius: 4px;
+      }
+    }
+
+    // 固定列时的阴影
+    .ant-table-ping-right .ant-table-cell-fix-right-first::after,
+    .ant-table-ping-right .ant-table-cell-fix-right-last::after {
+      box-shadow: -4px 0px 4px 0px rgba(234, 234, 234, 0.5);
+      margin-left: 30px;
+    }
+
+    // :hover 时的颜色调整（修改无效，可加 !important）
+    .ant-table-tbody>tr:hover>td,
+    .ant-table-tbody>tr:hover>.ant-table-cell-fix-left,
+    .ant-table-tbody>tr:hover>.ant-table-cell-fix-right {
+      background: #f3f5ff;
+    }
+
+    &-action-btn {
+      .ant-btn-link {
+        &:first-child {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+
+  .ant-pagination-item {
+    border-radius: 6px;
+  }
+
+  &-fit {
+    height: 100%;
+
+    .ant-table-header {
+      &::-webkit-scrollbar {
+        width: 5px;
+        background-color: hsla(0, 0%, 80%, 0.08);
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.05);
+        border-radius: 3px;
+      }
+    }
+
+    .ant-table-body {
+      >table {
+        min-height: 1px;
+      }
+    }
+
+    .ant-table-fixed-header .ant-table-scroll .ant-table-header {
+      min-width: 5px !important;
+    }
+
+    .ant-table-pagination {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+
+    .ant-spin-nested-loading {
+      height: 100%;
+
+      .ant-spin-container {
+        position: relative;
+        height: 100%;
+
+        .ant-table {
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  &-noFit {}
+
+  // 固定列目前没有办法用细的滚动条
+  .ant-table-has-fix-right {
+    .ant-table-body {
+      &::-webkit-scrollbar {
+        width: 17px;
+      }
+    }
+  }
+
+  // mac 和 windows下有差异，window chrome下滚动条宽度17px，mac chrome下15px
+  &-userAgent-mac {
+    .ant-table-has-fix-right {
+      .ant-table-body {
+        &::-webkit-scrollbar {
+          width: 15px;
+        }
+      }
+    }
+  }
+
+  .ant-table-thead>tr>th {
+    // antd4.0 半透明会重叠
+    // background-color: fade(#1890ff, 8);
+    background-color: rgba(237, 246, 255, 1);
+  }
+
+  .ant-table-tbody>tr {
+    &.ant-table-placeholder {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: transparent;
+      border-top: none;
+
+      &>td.ant-table-cell {
+        display: table;
+        width: 100%;
+        border-right: none !important;
+      }
+    }
+  }
+
+  // fix: checkbox 选中时 固定列 最上面一层透明会 和下面重叠
+  // .ant-table-tbody > tr.ant-table-row-selected td {
+  //     background: transparent;
+  // }
+  &-alert {
+    margin-bottom: 8px;
+
+    &-message {
+      color: rgba(0, 0, 0, 0.65);
+    }
+
+    &-info-content>strong {
+      margin: 0 4px;
+      color: #13c2c2;
+    }
+
+    &-info-option {
+      margin-left: 10px;
+    }
+  }
+
+  &-nodata {
+    .ant-table-scroll {
+      overflow-y: hidden;
+    }
+  }
+
+  &-toolbar {
+    display: table;
+    width: 100%;
+    margin: 16px 0;
+    color: @text-color;
+  }
+
+  &-toolbar-left,
+  &-toolbar-right {
+    display: inline-block;
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  &-toolbar-left {
+    color: @text-color;
+    font-size: 16px;
+  }
+
+  &-toolbar-right {
+    float: right;
+  }
+
+  &-toolbar-setting-item {
+    display: inline-block;
+    margin-left: 16px;
+    color: @text-color;
+    font-size: 16px;
+    vertical-align: middle;
+    cursor: pointer;
+
+    &:hover {
+      color: @primary-color;
+    }
+  }
+
+  &-column-setting-title {
+    height: 32px;
+    line-height: 32px;
+
+    a {
+      display: inline-block;
+      float: right;
+      vertical-align: middle;
+    }
+  }
+
+  &-column-setting-checkbox-wrapper {
+    color: @text-color;
+    vertical-align: middle;
+  }
+
+  &-space-item {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .react-resizable {
+    position: relative;
+    background-clip: padding-box;
+  }
+
+  .react-resizable-handle {
+    position: absolute;
+    right: -5px;
+    bottom: 0;
+    z-index: 1;
+    width: 10px;
+    height: 100%;
+    cursor: col-resize;
+  }
+}

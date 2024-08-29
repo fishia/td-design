@@ -1,0 +1,208 @@
+@import '../../style/theme/index.less';
+
+.career-components-tagmodal {
+  // width: 200px;
+  // color: #00abf3;
+  // text-align: center;
+  // border: 1px solid #ddd;
+
+  .ant-select-selection {
+    background: #fff !important;
+    cursor: pointer;
+  }
+
+  .ant-select-multiple .ant-select-selection-item {
+    margin-right: 12px;
+  }
+
+  &--JobKeywords {
+    .ant-modal-content {
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .title {
+      height: 44px;
+      color: #262626;
+      font-weight: 400;
+      font-size: 14px;
+      text-align: left;
+    }
+
+    .listTitle {
+      margin-bottom: 16px;
+      color: #262626;
+      font-weight: 600;
+      font-size: 16px;
+      // font-family: PingFangSC-Semibold, PingFang SC;
+      // line-height: 22px;
+      text-align: left;
+    }
+
+    .card {
+      position: relative;
+      box-sizing: border-box;
+      // max-width: 130px;
+      height: 40px;
+      margin-top: 0;
+      margin-right: 16px;
+      margin-bottom: 16px;
+      padding-top: 0;
+      padding-right: 24px;
+      padding-left: 16px;
+      overflow: hidden;
+      color: #262626;
+      font-size: 14px;
+      line-height: 40px;
+      white-space: nowrap;
+      text-align: left;
+      text-overflow: ellipsis;
+      background-color: #f1f2f2;
+      border: 1px solid #f1f2f2;
+      border-radius: 4px;
+      cursor: pointer;
+
+      .anticon-close {
+        position: absolute;
+        top: 14px;
+        right: 8px;
+        //float: right;
+      }
+
+      // display: flex;
+      // justify-content: space-between;
+      // align-items: center;
+    }
+
+    .selected {
+      box-sizing: border-box;
+      color: @primary-color;
+      background-color: #fff;
+      border: 1px solid @primary-color;
+
+      .anticon-close {
+        color: @primary-color !important;
+      }
+    }
+
+    .cardList {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      width: 100%;
+
+      // margin-bottom: 24px;
+      .create {
+        width: 122px;
+        height: 40px;
+        background: #fff;
+        border: 1px solid #262626;
+        border-radius: 5px;
+      }
+
+      .ant-input {
+        width: 400px;
+      }
+
+      .ant-input-affix-wrapper {
+        width: 400px !important;
+        font-size: 14px;
+        border-color: #262626;
+        border-radius: 5px;
+      }
+
+      .sure {
+        color: @primary-color;
+        font-weight: 500;
+        font-size: 14px;
+        letter-spacing: -2px;
+        border: none;
+        box-shadow: none;
+      }
+
+      .cancel {
+        color: #9aa3b7;
+        font-weight: 500;
+        font-size: 14px;
+        border: none;
+        box-shadow: none;
+      }
+
+      .disable {
+        color: #ced2d9;
+        cursor: no-drop;
+        pointer-events: none;
+      }
+    }
+
+    .ant-modal-footer {
+      padding-bottom: 8px;
+    }
+
+    .footers {
+      display: flex;
+      justify-content: space-between;
+      box-sizing: border-box;
+      width: 100%;
+      padding: 14px 8px;
+      padding-bottom: 0;
+
+      .selectedCardList {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        width: 570px;
+      }
+
+      .titleText {
+        color: #262626;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 40px;
+      }
+
+      .submit {
+        margin-bottom: 16px;
+        color: #fff;
+        font-weight: 500;
+        font-size: 14px;
+        background: @primary-color;
+        border-color: @primary-color;
+        border-radius: 4px;
+      }
+    }
+
+    .airecommend {
+      color: #fff;
+      font-weight: 400;
+      font-size: 12px;
+    }
+
+    .scrollcontent {
+      // max-height: 338px;
+      height: 338px;
+      overflow-y: auto;
+    }
+
+    .dividerCss {
+      .ant-divider-inner-text {
+        padding: 0;
+      }
+    }
+
+    .moreCss {
+      padding: 0 16px;
+      font-size: 12px;
+
+      &:hover {
+        color: #262626;
+        border-color: #d9d9d9;
+      }
+
+      &:focus {
+        color: #262626;
+        border-color: #d9d9d9;
+      }
+    }
+  }
+}
